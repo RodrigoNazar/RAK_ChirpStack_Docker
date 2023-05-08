@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Cambiar al usuario vink
-# su - vink
-
 # script needs to be run with super privilege
 if [ $(id -u) -ne 0 ]; then
   printf "Script must be run with superuser privilege. Try 'sudo ./install.sh'\n"
@@ -83,12 +80,12 @@ chown -R networkserver:networkserver /etc/chirpstack-network-server
 cp -f ./chirpstack-application-server.toml /etc/chirpstack-application-server/chirpstack-application-server.toml
 chown -R appserver:appserver /etc/chirpstack-application-server
 
-# start chirpstack-network-server
-systemctl restart chirpstack-network-server
+# # start chirpstack-network-server
+# systemctl restart chirpstack-network-server
 
-# start chirpstack-application-server
-systemctl restart chirpstack-application-server
+# # start chirpstack-application-server
+# systemctl restart chirpstack-application-server
 
-# start chirpstack-gateway-bridge
-systemctl restart chirpstack-gateway-bridge
+# # start chirpstack-gateway-bridge
+# systemctl restart chirpstack-gateway-bridge
 
