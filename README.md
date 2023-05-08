@@ -36,8 +36,8 @@ cd RAK_ChirpStack_Docker/
 Después de correr todos estos script, basta ejecutar:
 
 ```
-sudo ./setup.sh
-
+bash ./setup.sh
+source ~/.bashrc
 ```
 
 
