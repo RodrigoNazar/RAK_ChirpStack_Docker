@@ -7,39 +7,30 @@ Este repositorio viene del Fork del repositorio de RAK:
 # Crear un nuevo Contenedor de Ubuntu en Docker 
 
 ```
-
-docker run -it ubuntu
-docker rename <container-id> "ubuntu.chirpstack"
+docker run --name "ubuntu.chirpstack" -it ubuntu
 docker start -i ubuntu.chirpstack
-
 ```
 
 # Scripts Base para Configurar el Cuevo Contenedor
 
-
 ```
-
 # Instalacion de dependencias
 apt update
 apt install sudo
 
-sudo apt install vim
-sudo apt install git
-
-
 # Crea el nuevo usuario
 sudo adduser chirpstack
+echo 'chirpstack ALL=(ALL:ALL) ALL' >> /etc/sudoers
+
 su - chirpstack
 
+# Instalacion de paquetes utiles
+sudo apt install -y vim git
 
-# Agrega elementos nuevos al PATH y alias
-echo 'PATH=$PATH:/usr/lib/postgresql/14/bin'; >> ~/.bashrc
-echo 'alias chirpstack-network-server=/etc/init.d/chirpstack-network-server'; >> ~/.bashrc
-echo 'alias chirpstack-application-server=/etc/init.d/chirpstack-application-server'; >> ~/.bashrc
-echo 'alias chirpstack-gateway-bridge=/etc/init.d/chirpstack-gateway-bridge'; >> ~/.bashrc
+# Clonamos el repositorio
+git clone https://github.com/RodrigoNazar/RAK_ChirpStack_Docker.git
 
-source ~/.bashrc
-
+cd RAK_ChirpStack_Docker/
 ```
 
 
