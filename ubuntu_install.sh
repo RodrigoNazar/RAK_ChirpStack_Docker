@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Cambiar al usuario vink
+# su - vink
+
 # script needs to be run with super privilege
 if [ $(id -u) -ne 0 ]; then
   printf "Script must be run with superuser privilege. Try 'sudo ./install.sh'\n"
@@ -50,11 +53,12 @@ apt install chirpstack-gateway-bridge
 # /etc/init.d/chirpstack-gateway-bridge stop # Stop
 # sudo tail -f -n 100 /var/log/chirpstack-gateway-bridge # Display Logs
 
-
-
-
-
-
+### Chirpstack Application Server
+apt install chirpstack-application-server
+# /etc/init.d/chirpstack-application-server start # Start
+# /etc/init.d/chirpstack-application-server restart # Restart
+# /etc/init.d/chirpstack-application-server stop # Stop
+# sudo tail -f -n 100 /var/log/chirpstack-application-server # Display Logs
 
 
 # rm *.deb -f
