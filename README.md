@@ -33,6 +33,13 @@ git clone https://github.com/RodrigoNazar/RAK_ChirpStack_Docker.git
 cd RAK_ChirpStack_Docker/
 ```
 
+Después de correr todos estos script, basta ejecutar:
+
+```
+sudo ./setup.sh
+
+```
+
 
 # Instalar directamente
 
