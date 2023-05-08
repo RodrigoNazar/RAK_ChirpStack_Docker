@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export TZ=America/Santiago
+export DEBIAN_FRONTEND=noninteractive
+
 # script needs to be run with super privilege
 if [ $(id -u) -ne 0 ]; then
   printf "Script must be run with superuser privilege. Try 'sudo ./install.sh'\n"
@@ -11,7 +14,14 @@ cp init_sql.sql /tmp/init_sql.sql -f
 #apt list --upgradable
 
 # 1. install requirements
-apt -f -y install dialog mosquitto mosquitto-clients redis-server redis-tools postgresql apt-transport-https dirmngr
+apt -f -y install dialog 
+apt -f -y install mosquitto 
+apt -f -y install mosquitto-clients 
+apt -f -y install redis-server 
+apt -f -y install redis-tools
+printf "2\n"| apt -f -y install postgresql
+apt -f -y install apt-transport-https
+apt -f -y install dirmngr
 
 
 # Start the services!
