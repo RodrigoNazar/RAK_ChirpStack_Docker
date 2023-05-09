@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 # script needs to be run with super privilege
 if [ $(id -u) -ne 0 ]; then
   printf "Script must be run with superuser privilege. Try 'sudo ./install.sh'\n"
