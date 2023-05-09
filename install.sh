@@ -22,7 +22,6 @@ apt -f -y install dialog \
   mosquitto-clients \
   redis-server \
   redis-tools \
-  # postgresql \
   apt-transport-https \
   dirmngr 
 
