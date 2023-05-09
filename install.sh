@@ -17,14 +17,23 @@ echo 'alias chirpstack-gateway-bridge=/etc/init.d/chirpstack-gateway-bridge' >> 
 cp init_sql.sql /tmp/init_sql.sql -f
 
 # 1. install requirements
-export DEBIAN_FRONTEND=noninteractive apt -f -y install dialog \
-  mosquitto \
-  mosquitto-clients \
-  redis-server \
-  redis-tools \
-  postgresql \
-  apt-transport-https \
-  dirmngr 
+# export DEBIAN_FRONTEND=noninteractive apt -f -y install dialog \
+#   mosquitto \
+#   mosquitto-clients \
+#   redis-server \
+#   redis-tools \
+#   postgresql \
+#   apt-transport-https \
+#   dirmngr 
+
+export DEBIAN_FRONTEND=noninteractive apt -f -y install dialog
+export DEBIAN_FRONTEND=noninteractive apt -f -y install mosquitto
+export DEBIAN_FRONTEND=noninteractive apt -f -y install mosquitto-clients
+export DEBIAN_FRONTEND=noninteractive apt -f -y install redis-server
+export DEBIAN_FRONTEND=noninteractive apt -f -y install redis-tools
+export DEBIAN_FRONTEND=noninteractive apt -f -y install postgresql
+export DEBIAN_FRONTEND=noninteractive apt -f -y install apt-transport-https
+export DEBIAN_FRONTEND=noninteractive apt -f -y install dirmngr
 
 # Start the services!
 service postgresql restart
@@ -112,8 +121,8 @@ chown -R appserver:appserver /etc/chirpstack-application-server
 
 
 # Restart the services!
-# service postgresql restart
-# /etc/init.d/redis-server restart
-# service mosquitto restart
+service postgresql restart
+/etc/init.d/redis-server restart
+service mosquitto restart
 
 # mkdir /run/mosquitto/

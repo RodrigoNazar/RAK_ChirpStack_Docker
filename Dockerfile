@@ -22,7 +22,7 @@ RUN apt update && apt install -y \
 # USER chirpstack
 
 # Set the working directory
-WORKDIR ~
+WORKDIR /root/
 
 # Clonamos el repositorio
 RUN git clone https://github.com/RodrigoNazar/RAK_ChirpStack_Docker.git
