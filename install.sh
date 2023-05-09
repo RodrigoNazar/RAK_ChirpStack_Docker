@@ -17,23 +17,14 @@ echo 'alias chirpstack-gateway-bridge=/etc/init.d/chirpstack-gateway-bridge' >> 
 cp init_sql.sql /tmp/init_sql.sql -f
 
 # 1. install requirements
-# export DEBIAN_FRONTEND=noninteractive apt -f -y install dialog \
-#   mosquitto \
-#   mosquitto-clients \
-#   redis-server \
-#   redis-tools \
-#   postgresql \
-#   apt-transport-https \
-#   dirmngr 
-
-export DEBIAN_FRONTEND=noninteractive apt -f -y dialog
-export DEBIAN_FRONTEND=noninteractive apt -f -y mosquitto
-export DEBIAN_FRONTEND=noninteractive apt -f -y mosquitto-clients
-export DEBIAN_FRONTEND=noninteractive apt -f -y redis-server
-export DEBIAN_FRONTEND=noninteractive apt -f -y redis-tools
-export DEBIAN_FRONTEND=noninteractive apt -f -y apt-transport-https
-export DEBIAN_FRONTEND=noninteractive apt -f -y dirmngr 
-export DEBIAN_FRONTEND=noninteractive apt -f -y install postgresql
+export DEBIAN_FRONTEND=noninteractive apt -f -y install dialog \
+  mosquitto \
+  mosquitto-clients \
+  redis-server \
+  redis-tools \
+  postgresql \
+  apt-transport-https \
+  dirmngr 
 
 # Start the services!
 service postgresql restart

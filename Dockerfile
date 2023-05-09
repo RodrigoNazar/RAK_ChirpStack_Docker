@@ -1,5 +1,5 @@
-FROM ubuntu:latest
-# FROM ubuntu:18.04
+# FROM ubuntu:latest
+FROM ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG TZ=America/Santiago
@@ -33,6 +33,7 @@ RUN sudo RAK_ChirpStack_Docker/install.sh
 # Expose ports
 EXPOSE 1700/udp
 EXPOSE 8000/tcp
+EXPOSE 8080/tcp
 
 # # Run the applications
 # CMD ["chirpstack-gateway-bridge", "--config", "/etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml"]
