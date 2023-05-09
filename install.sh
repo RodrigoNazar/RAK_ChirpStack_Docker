@@ -20,9 +20,11 @@ apt -f -y install dialog \
   mosquitto-clients \
   redis-server \
   redis-tools \
-  postgresql \
+  # postgresql \
   apt-transport-https \
   dirmngr 
+
+export DEBIAN_FRONTEND=noninteractive apt -f -y install postgresql
 
 # Start the services!
 service postgresql restart
