@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 # script needs to be run with super privilege
 if [ $(id -u) -ne 0 ]; then
   printf "Script must be run with superuser privilege. Try 'sudo ./install.sh'\n"
@@ -24,7 +26,7 @@ apt -f -y install dialog \
   apt-transport-https \
   dirmngr 
 
-export DEBIAN_FRONTEND=noninteractive apt -f -y install postgresql
+apt -f -y install postgresql
 
 # Start the services!
 service postgresql restart
