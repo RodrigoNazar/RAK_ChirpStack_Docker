@@ -121,8 +121,8 @@ chown -R appserver:appserver /etc/chirpstack-application-server
 
 
 # Restart the services!
-service postgresql restart
-/etc/init.d/redis-server restart
-service mosquitto restart
+# service postgresql restart
+# /etc/init.d/redis-server restart
+# service mosquitto restart
 
 # mkdir /run/mosquitto/
