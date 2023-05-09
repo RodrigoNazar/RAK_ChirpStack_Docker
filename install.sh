@@ -26,14 +26,14 @@ cp init_sql.sql /tmp/init_sql.sql -f
 #   apt-transport-https \
 #   dirmngr 
 
-export DEBIAN_FRONTEND=noninteractive apt -f -y install dialog
-export DEBIAN_FRONTEND=noninteractive apt -f -y install mosquitto
-export DEBIAN_FRONTEND=noninteractive apt -f -y install mosquitto-clients
-export DEBIAN_FRONTEND=noninteractive apt -f -y install redis-server
-export DEBIAN_FRONTEND=noninteractive apt -f -y install redis-tools
-export DEBIAN_FRONTEND=noninteractive apt -f -y install postgresql
-export DEBIAN_FRONTEND=noninteractive apt -f -y install apt-transport-https
-export DEBIAN_FRONTEND=noninteractive apt -f -y install dirmngr
+DEBIAN_FRONTEND=noninteractive apt -f -y install dialog
+DEBIAN_FRONTEND=noninteractive apt -f -y install mosquitto
+DEBIAN_FRONTEND=noninteractive apt -f -y install mosquitto-clients
+DEBIAN_FRONTEND=noninteractive apt -f -y install redis-server
+DEBIAN_FRONTEND=noninteractive apt -f -y install redis-tools
+DEBIAN_FRONTEND=noninteractive apt -f -y install postgresql
+DEBIAN_FRONTEND=noninteractive apt -f -y install apt-transport-https
+DEBIAN_FRONTEND=noninteractive apt -f -y install dirmngr
 
 # Start the services!
 service postgresql restart
